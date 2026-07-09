@@ -11,7 +11,7 @@ pure bigram, counting recovers the same distribution the network converges to.
 import torch
 
 # --- Vocab (same conventions) -----------------------------
-text = open('input.txt').read()
+text = open('../input.txt').read()
 chars = sorted(set(text))
 vocab_size = len(chars)
 stoi = {c: i for i, c in enumerate(chars)}   # char -> ID
