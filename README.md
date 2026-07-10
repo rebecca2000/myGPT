@@ -20,6 +20,30 @@ tensor shape and every design decision. Optimise for understanding.
 
 ---
 
+## Milestone 0 — PyTorch & tensor foundations
+
+A hands-on prerequisite track for anyone comfortable with Python but new to
+PyTorch/NumPy-style tensors. **Learn by doing:** each notebook is a sequence of
+small exercises where you replace a `TODO` with one line of code and run the
+`check(...)` cell below it for instant ✅/❌ feedback. Every operation used in the
+later milestones is covered here.
+
+**How to run**
+```bash
+cd M0
+../.venv/bin/python3 -m jupyter notebook
+```
+Work through the notebooks in order; the shared `m0_checks.py` provides the
+`check` / `check_tensor` helpers (already imported in each notebook's setup cell).
+
+**Success criteria**
+- [ ] Every `check(...)` cell prints ✅ (all exercises solved).
+- [ ] You can state the shape produced by `q @ k.transpose(-2,-1)` and why.
+- [ ] You can explain what `dim=-1` normalises over in `softmax`.
+- [ ] You can write the 3-line training loop (`zero_grad` → `backward` → `step`) from memory.
+
+---
+
 ## Milestone 1 — Bigram baseline & training harness
 
 Build a lookup-table bigram model (`nn.Embedding(vocab, vocab)`) with no
