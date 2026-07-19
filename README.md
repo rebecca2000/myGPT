@@ -37,10 +37,15 @@ Work through the notebooks in order; the shared `m0_checks.py` provides the
 `check` / `check_tensor` helpers (already imported in each notebook's setup cell).
 
 **Success criteria**
-- [ ] Every `check(...)` cell prints ✅ (all exercises solved).
-- [ ] You can state the shape produced by `q @ k.transpose(-2,-1)` and why.
-- [ ] You can explain what `dim=-1` normalises over in `softmax`.
-- [ ] You can write the 3-line training loop (`zero_grad` → `backward` → `step`) from memory.
+- [x] Every `check(...)` cell prints ✅ (all 48 exercises across 8 notebooks pass).
+- [x] You can state the shape produced by `q @ k.transpose(-2,-1)` and why.
+- [x] You can explain what `dim=-1` normalises over in `softmax`.
+- [x] You can write the 3-line training loop (`zero_grad` → `backward` → `step`) from memory.
+
+**Notes / learnings**
+- `.backward()` *accumulates* into `.grad` (`grad += ...`), which is why the loop
+  must `zero_grad()` each step — the graph linking params → loss is built
+  implicitly during the forward pass via each tensor's `grad_fn`.
 
 ---
 
